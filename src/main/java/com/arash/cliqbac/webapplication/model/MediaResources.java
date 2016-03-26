@@ -9,8 +9,6 @@ public class MediaResources {
 	int userId;
 	Image mediaResource;
 	
-	
-	
 	public int getResourceId() {
 		return resourceId;
 	}
