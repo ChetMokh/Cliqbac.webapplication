@@ -4,16 +4,18 @@ import java.util.List;
 
 import com.arash.cliqbac.webapplication.model.MediaResources;
 
-public class ResourcesDAO {
+public class ResourceDAO {
 
 	List<MediaResources> findAll() {
 		
 		return null;
 	}
+	
     List<MediaResources> findById() {
     	
 		return null;
 	}
+    
     List<MediaResources> findByName() {
     	
 		return null;
@@ -23,10 +25,12 @@ public class ResourcesDAO {
 		
     	return false;
 	}
+    
     boolean updateEmployee(MediaResources mediaResources) {
 		
     	return false;
 	}
+    
     boolean deleteEmployee(MediaResources mediaResources) {
     	
 		return false;
