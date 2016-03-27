@@ -34,12 +34,11 @@ public class UserDAO {
 	@SuppressWarnings("null")
 	public List<User> findAll() throws SQLException, ClassNotFoundException {
 
-		System.out.println("1111111");
 		List<User> myUser = new ArrayList<User>();
 		String selectTableSQL = "SELECT * from users";
 		java.sql.Statement statement = connection.createStatement();
 		ResultSet rs = statement.executeQuery(selectTableSQL);
-		System.out.println("222222");
+
 		while (rs.next()) {
 			int userId = rs.getInt("userid");
 			String userName = rs.getString("username");
@@ -48,7 +47,6 @@ public class UserDAO {
 			String realName = rs.getString("realname");
 			String modTime = rs.getString("modtime");
 			myUser.add(new User(userId, userName, phoneNumber, realName));
-			System.out.println("333333333");
 		}
 		return myUser;
 	}
@@ -73,6 +71,7 @@ public class UserDAO {
 		return myUser;
     	
 	}
+    
     public List<User> findByName(String userName) throws SQLException {
     	
     	List<User> myUser = new ArrayList<User>();
@@ -115,6 +114,7 @@ public class UserDAO {
 		return true;
 		
 	}
+    
     
     boolean deleteUser(User use) {
 		

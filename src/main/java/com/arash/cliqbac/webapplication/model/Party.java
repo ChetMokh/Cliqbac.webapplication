@@ -6,11 +6,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Party {
 
 	int partyId;
 	int partyOwner;
-	String[] partyLocation = new String[2];
+	String partyName;
+	String partyLocation;
 	String partyDescription;
 	Image partyImage;	
 	Date partyDate;
@@ -29,7 +33,7 @@ public class Party {
 		
 	}
 
-	public Party (int partyOwner, Date partyDate, Time partyTime, String[] partyLocation) {
+	public Party (int partyOwner, Date partyDate, Time partyTime, String partyLocation) {
 		
 		
 	}
@@ -39,13 +43,13 @@ public class Party {
 		
 	}
 
-	public Party (int partyId, int partyOwner, Date partyDate, Time partyTime, String[] partyLocation) {
+	public Party (int partyId, int partyOwner, Date partyDate, Time partyTime, String partyLocation) {
 		
 		
 	}
 	
 	public Party (int partyOwner, Date partyDate, Time partyTime, 
-				String[] partyLocation, List<User> guestList, List<Invitation> partyInvitations, Image partyImage) {
+				String partyLocation, List<User> guestList, List<Invitation> partyInvitations, Image partyImage) {
 		
 		setPartyOwner(partyOwner);
 		setPartyDate(partyDate);
@@ -57,8 +61,26 @@ public class Party {
 		
 	}
 	
+	public Party (int partyId, int partyOwner, String partyLocation, String partyDescription, String partyName) {
+	
+		setPartyId(partyId);
+		setPartyOwner(partyOwner);
+		setPartyLocation(partyLocation);
+		setPartyDescription(partyDescription);
+		setPartyName(partyName);
+}
+	
+	
+	public String getPartyName() {
+		return partyName;
+	}
+
+	public void setPartyName(String partyName) {
+		this.partyName = partyName;
+	}
+
 	public Party (int partyId, int partyOwner, Date partyDate, Time partyTime, 
-			String[] partyLocation, List<User> guestList, List<Invitation> partyInvitations, Image partyImage) {
+			String partyLocation, List<User> guestList, List<Invitation> partyInvitations, Image partyImage) {
 	
 		setPartyId(partyId);
 		setPartyOwner(partyOwner);
@@ -87,11 +109,11 @@ public class Party {
 		this.partyOwner = partyOwner;
 	}
 	
-	public String[] getPartyLocation() {
+	public String getPartyLocation() {
 		return partyLocation;
 	}
 	
-	public void setPartyLocation(String[] partyLocation) {
+	public void setPartyLocation(String partyLocation) {
 		this.partyLocation = partyLocation;
 	}
 	
