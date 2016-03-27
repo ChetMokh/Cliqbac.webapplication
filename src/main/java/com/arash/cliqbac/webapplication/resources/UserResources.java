@@ -32,4 +32,5 @@ public class UserResources {
         users.getConnection();
 		return users.findById(userId);
     }
+
 }

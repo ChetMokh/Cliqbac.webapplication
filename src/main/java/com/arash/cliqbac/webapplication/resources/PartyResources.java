@@ -29,8 +29,17 @@ public class PartyResources {
 	@GET
 	@Path("user/{userId}")
 	@Produces(MediaType.APPLICATION_XML)
-    public List<Party> getUserById(@PathParam("userId") int userId ) throws ClassNotFoundException, SQLException {
+    public List<Party> getPartyByUserId(@PathParam("userId") int userId ) throws ClassNotFoundException, SQLException {
 		parties.getConnection();
-		return parties.findById(userId);
+		return parties.findPartyByUserId(userId);
     }
+	
+	@GET
+	@Path("/{partyId}")
+	@Produces(MediaType.APPLICATION_XML)
+    public List<Party> getPartyByPartyId(@PathParam("partyId") int partyId ) throws ClassNotFoundException, SQLException {
+		parties.getConnection();
+		return parties.findPartyByPartyId(partyId);
+    }
+	
 }

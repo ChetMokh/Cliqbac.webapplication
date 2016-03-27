@@ -54,7 +54,7 @@ public class PartyDAO {
 	}
 	
 	
-    public List<Party> findById(int userId) throws SQLException {
+    public List<Party> findPartyByUserId(int userId) throws SQLException {
     	
     	List<Party> myParties = new ArrayList<Party>();
 		String selectTableSQL = "SELECT * from parties where userid = "+ userId +" ";
@@ -73,6 +73,27 @@ public class PartyDAO {
 		return myParties;
     	
 	}
+    
+public List<Party> findPartyByPartyId(int partyId) throws SQLException {
+    	
+    	List<Party> myParties = new ArrayList<Party>();
+		String selectTableSQL = "SELECT * from parties where partyid = "+ partyId +" ";
+		java.sql.Statement statement = connection.createStatement();
+		ResultSet rs = statement.executeQuery(selectTableSQL);
+		
+		while (rs.next()) {
+			int userId = rs.getInt("userid");
+			partyId = rs.getInt("partyid");
+			String address = rs.getString("address");
+			String partynotes = rs.getString("partynotes");
+			String partyname = rs.getString("partyname");
+			String modTime = rs.getString("modtime");
+			myParties.add(new Party(partyId, userId, address, partynotes, partyname));
+		}
+		return myParties;
+    	
+	}
+    
     
 //    public List<User> findByName(String userName) throws SQLException {
 //    	
