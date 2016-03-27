@@ -2,7 +2,9 @@ package com.arash.cliqbac.webapplication.model;
 
 import java.awt.Image;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class User {
 	
 	int userId;

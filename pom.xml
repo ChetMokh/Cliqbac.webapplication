@@ -34,6 +34,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+            	<groupId>org.postgresql</groupId>
+            	<artifactId>postgresql</artifactId>
+            	<version>9.4.1208.jre6</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -50,6 +55,11 @@
             <artifactId>jersey-media-moxy</artifactId>
         </dependency>
         -->
+        <dependency>
+        	<groupId>org.postgresql</groupId>
+        	<artifactId>postgresql</artifactId>
+        	<version>9.4.1208.jre6</version>
+        </dependency>
     </dependencies>
     <properties>
         <jersey.version>2.22.2</jersey.version>
