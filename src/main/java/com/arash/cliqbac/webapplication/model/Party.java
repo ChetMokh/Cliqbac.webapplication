@@ -93,6 +93,26 @@ public class Party {
 		
 	}
 	
+	public Party (int partyOwner, Date partyDate, Time partyTime, 
+			String partyLocation, List<User> guestList, List<Invitation> partyInvitations, Image partyImage, String partyName) {
+	
+		setPartyOwner(partyOwner);
+		setPartyDate(partyDate);
+		setPartyTime(partyTime);
+		setPartyImage(partyImage);
+		setPartyLocation(partyLocation);
+		setPartyInvitations(partyInvitations);
+		setPartyGuests(guestList);
+		setPartyName(partyName);
+		
+	}
+	
+	public Party (int partyOwner, String partyName) {
+	
+		setPartyOwner(partyOwner);
+		setPartyName(partyName);
+	}
+	
 	public int getPartyId() {
 		return partyId;
 	}

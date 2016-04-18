@@ -94,6 +94,16 @@ public List<Party> findPartyByPartyId(int partyId) throws SQLException {
     	
 	}
     
+public boolean createParty(Party party) throws SQLException {
+	
+	String selectTableSQL = "INSERT INTO parties (userid, partyname) "
+			+ "VALUES ("+ party.getPartyOwner() +", '"+ party.getPartyName() +"')";
+	java.sql.Statement statement = connection.createStatement();
+//	statement.execute(selectTableSQL);
+	statement.executeQuery(selectTableSQL);
+	return true;
+	
+	}
     
 //    public List<User> findByName(String userName) throws SQLException {
 //    	

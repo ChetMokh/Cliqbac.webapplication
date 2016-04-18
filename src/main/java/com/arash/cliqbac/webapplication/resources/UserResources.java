@@ -19,7 +19,7 @@ public class UserResources {
 	
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
     public List<User> getAllUsers() throws ClassNotFoundException, SQLException {
         users.getConnection();
 		return users.findAll();
@@ -27,10 +27,11 @@ public class UserResources {
 	
 	@GET
 	@Path("/{userId}")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
     public List<User> getUserById(@PathParam("userId") int userId ) throws ClassNotFoundException, SQLException {
         users.getConnection();
 		return users.findById(userId);
     }
+	
 
 }
